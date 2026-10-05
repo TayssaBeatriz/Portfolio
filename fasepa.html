@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Placas e Cartazes - FASEPA</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Silkscreen:wght@400;700&family=Archivo:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff1fa9;
+            --paper: #f1efea;
+            --ink: #1c1c1c;
+            --dot: rgba(0, 0, 0, .14);
+            --card: #fbfaf7;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px)
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --paper: #171717;
+                --ink: #f1efea;
+                --dot: rgba(255, 255, 255, .12);
+                --card: #232323
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --paper: #171717;
+            --ink: #f1efea;
+            --dot: rgba(255, 255, 255, .12);
+            --card: #232323
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0
+        }
+
+        body {
+            background: var(--paper) radial-gradient(var(--dot) 1px, transparent 1.5px) 0 0/16px 16px;
+            color: var(--ink);
+            font-family: Archivo, system-ui, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        a {
+            color: inherit
+        }
+
+        .back {
+            display: inline-block;
+            margin: 22px 0;
+            font-family: Silkscreen, monospace;
+            font-size: 13px;
+            background: #1c1c1c;
+            color: #fff;
+            padding: 8px 12px;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 var(--pink)
+        }
+
+        h1 {
+            font-family: Anton, Impact, sans-serif;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: .95;
+            font-size: clamp(48px, 11vw, 120px);
+            color: #fff;
+            -webkit-text-stroke: 3px #1c1c1c;
+            paint-order: stroke fill;
+            text-shadow: 5px 5px 0 #1c1c1c
+        }
+
+        .marker {
+            display: block;
+            font-family: 'Permanent Marker', cursive;
+            color: var(--pink);
+            font-size: clamp(40px, 8vw, 90px);
+            line-height: 1.1;
+            transform: rotate(-3deg);
+            margin: 8px 0 0 .3em;
+            text-shadow: 4px 4px 0 #1c1c1c
+        }
+
+        .sub {
+            margin: 22px 0 40px;
+            max-width: 50ch
+        }
+
+        /* galeria: linhas de mesma altura, cada foto na sua proporção */
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-bottom: 70px
+        }
+
+        .grid::after {
+            content: "";
+            flex-grow: 999
+        }
+
+        figure {
+            margin: 0;
+            flex: 1 1 220px;
+            cursor: zoom-in
+        }
+
+        .slot {
+            display: block;
+            line-height: 0
+        }
+
+        figure img {
+            display: block;
+            width: 100%;
+            height: auto
+        }
+
+        #lb {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .92);
+            display: none;
+            place-items: center;
+            padding: 20px;
+            z-index: 9;
+            cursor: zoom-out
+        }
+
+        #lb.on {
+            display: grid
+        }
+
+        #lb img {
+            max-width: 100%;
+            max-height: 100%
+        }
+
+        footer {
+            padding: 24px 0;
+            font-family: Silkscreen, monospace;
+            font-size: 12px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <a class="back" href="index.html">← voltar ao portfólio</a>
+        <h1>Placas e<br>Cartazes</h1>
+        <span class="marker">FASEPA</span>
+        <p class="sub">Uma seleção dos designs de placas e cartazes feitos para a FASEPA.</p>
+        <div class="grid">
+            <figure>
+                <div class="slot"><img src="img/Acesso ao Setor Pedagogico.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaAuditorio.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala1.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala2.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala3.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala4.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala5.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala6.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala7.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala8.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala9.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/placaSala10.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/Banner1.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/Banner2.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/Banner3.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/Banner4.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/FAIXA1.png" alt=""></div>
+            </figure>
+            <figure>
+                <div class="slot"><img src="img/FAIXA2.png" alt=""></div>
+            </figure>
+        </div>
+    </div>
+    <div id="lb"><img alt=""></div>
+    <footer>© 2026 Tayssa Beatriz</footer>
+    <script>
+        document.querySelectorAll("figure img").forEach(function (i) {
+            function f() { var w = i.naturalWidth / i.naturalHeight * 220; i.closest("figure").style.flex = w + " 1 " + w + "px" }
+            i.complete && i.naturalWidth ? f() : i.addEventListener("load", f);
+        });
+        var lb = document.getElementById("lb"), li = lb.querySelector("img");
+        document.querySelectorAll("figure img").forEach(function (i) { i.addEventListener("click", function () { li.src = i.src; li.alt = i.alt; lb.classList.add("on") }) });
+        lb.addEventListener("click", function () { lb.classList.remove("on") });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Barber Curse — Tayssa.design</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Silkscreen:wght@400;700&family=Archivo:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff1fa9;
+      --paper: #f1efea;
+      --ink: #1c1c1c;
+      --dot: rgba(0, 0, 0, .14);
+      --card: #fbfaf7;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
+    }
+
+    @media (prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --paper: #171717;
+        --ink: #f1efea;
+        --dot: rgba(255, 255, 255, .12);
+        --card: #232323
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --paper: #171717;
+      --ink: #f1efea;
+      --dot: rgba(255, 255, 255, .12);
+      --card: #232323
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    html {
+      scroll-padding-top: env(safe-area-inset-top, 0px)
+    }
+
+    body {
+      background: var(--paper) radial-gradient(var(--dot) 1px, transparent 1.5px) 0 0/16px 16px;
+      color: var(--ink);
+      font-family: Archivo, system-ui, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden
+    }
+
+    a {
+      color: inherit
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--pink);
+      outline-offset: 3px
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
+
+    .tag {
+      font-family: Silkscreen, monospace;
+      font-size: 13px;
+      background: var(--pink);
+      color: #fff;
+      padding: 5px 10px;
+      display: inline-block;
+      margin-right: 4px
+    }
+
+    .tag.k {
+      background: #1c1c1c
+    }
+
+    .marker {
+      font-family: 'Permanent Marker', cursive;
+      color: var(--pink)
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      font-family: Silkscreen, monospace;
+      font-size: 13px
+    }
+
+    nav span {
+      flex: 1;
+      border-top: 2px solid var(--ink);
+      margin: 0 14px
+    }
+
+    nav a {
+      text-decoration: none
+    }
+
+    .intro {
+      padding: 30px 0 40px
+    }
+
+    h1 {
+      font-family: Anton, Impact, sans-serif;
+      font-weight: 400;
+      line-height: .95;
+      text-transform: uppercase;
+      font-size: clamp(54px, 12vw, 130px);
+      -webkit-text-stroke: 3px #1c1c1c;
+      color: #fff;
+      paint-order: stroke fill;
+      text-shadow: 6px 6px 0 #1c1c1c
+    }
+
+    .intro .marker {
+      display: block;
+      font-size: clamp(30px, 6vw, 64px);
+      line-height: .9;
+      margin: .15em 0 0 .4em;
+      transform: rotate(-4deg);
+      text-shadow: 4px 4px 0 #1c1c1c
+    }
+
+    .meta {
+      margin-top: 26px
+    }
+
+    .intro p {
+      max-width: 56ch;
+      margin-top: 18px;
+      font-size: 18px
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 34px 26px;
+      padding-bottom: 60px
+    }
+
+    .shot {
+      background: var(--card);
+      border: 3px solid #1c1c1c;
+      box-shadow: 7px 7px 0 var(--pink);
+      padding: 12px;
+      position: relative
+    }
+
+    .shot.wide {
+      grid-column: 1 / -1
+    }
+
+    .frame {
+      position: relative;
+      aspect-ratio: 16/10;
+      border: 3px solid #1c1c1c;
+      background: #fff radial-gradient(#1c1c1c 28%, transparent 30%) 0 0/9px 9px;
+      overflow: hidden;
+      display: grid;
+      place-items: center
+    }
+
+    .shot.wide .frame {
+      aspect-ratio: 16/9
+    }
+
+    .frame span {
+      font-family: Silkscreen, monospace;
+      font-size: 13px;
+      background: var(--pink);
+      color: #fff;
+      padding: 6px 10px;
+      text-align: center;
+      max-width: 90%
+    }
+
+    /* a imagem cobre o espaço reservado; se o arquivo não existir ela some e o aviso aparece */
+    .frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: var(--card)
+    }
+
+    figcaption {
+      font-family: Silkscreen, monospace;
+      font-size: 12px;
+      margin-top: 10px
+    }
+
+    .back {
+      text-align: center;
+      padding: 0 0 50px
+    }
+
+    .btn {
+      font-family: Silkscreen, monospace;
+      font-weight: 700;
+      font-size: 15px;
+      background: #1c1c1c;
+      color: #fff;
+      padding: 14px 22px;
+      text-decoration: none;
+      box-shadow: 5px 5px 0 var(--pink);
+      display: inline-block
+    }
+
+    .btn:hover {
+      background: var(--pink);
+      box-shadow: 5px 5px 0 #1c1c1c
+    }
+
+    footer {
+      padding: 26px 0;
+      font-family: Silkscreen, monospace;
+      font-size: 12px;
+      text-align: center
+    }
+
+    @media(max-width:760px) {
+      .gallery {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <nav><a href="../../index.html">@Tayssa.design</a><span></span><a href="../../index.html#projetos">← projetos</a></nav>
+
+    <header class="intro">
+      <h1>Barber Curse<span class="marker">Landing Page</span></h1>
+      <div class="meta"><span class="tag">e-commerce</span><span class="tag k">2025</span></div>
+      <p>Descreva aqui o desafio, o que você entregou e as ferramentas que usou neste projeto.</p>
+    </header>
+
+    <!--
+      COMO ADICIONAR IMAGENS
+      1. Coloque os arquivos na pasta "img" que fica ao lado deste index.html.
+      2. Troque o nome em src="img/01.png" pelo nome do seu arquivo.
+      3. Para mais imagens, copie um bloco <figure class="shot"> inteiro.
+         Use class="shot wide" para a imagem ocupar a largura toda.
+    -->
+    <main class="gallery">
+      <figure class="shot wide">
+        <div class="frame"><span>coloque a imagem em img/01.png</span><img src="img/01.png" alt="Barber Curse — visão geral da página" onerror="this.remove()"></div>
+        <figcaption>01 — visão geral</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><span>coloque a imagem em img/02.png</span><img src="img/02.png" alt="Barber Curse — detalhe 2" onerror="this.remove()"></div>
+        <figcaption>02 — legenda</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><span>coloque a imagem em img/03.png</span><img src="img/03.png" alt="Barber Curse — detalhe 3" onerror="this.remove()"></div>
+        <figcaption>03 — legenda</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><span>coloque a imagem em img/04.png</span><img src="img/04.png" alt="Barber Curse — detalhe 4" onerror="this.remove()"></div>
+        <figcaption>04 — legenda</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="frame"><span>coloque a imagem em img/05.png</span><img src="img/05.png" alt="Barber Curse — detalhe 5" onerror="this.remove()"></div>
+        <figcaption>05 — legenda</figcaption>
+      </figure>
+      <figure class="shot wide">
+        <div class="frame"><span>coloque a imagem em img/06.png</span><img src="img/06.png" alt="Barber Curse — versão mobile" onerror="this.remove()"></div>
+        <figcaption>06 — versão mobile</figcaption>
+      </figure>
+    </main>
+
+    <div class="back"><a class="btn" href="../../index.html#projetos">← voltar aos projetos</a></div>
+  </div>
+  <footer>© 2026 Tayssa — feito com carinho</footer>
+</body>
+
+</html>
